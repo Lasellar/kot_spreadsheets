@@ -33,7 +33,3 @@ async def get_report(
     )
     print(f'https://docs.google.com/spreadsheets/d/{spreadsheetid}')
     return projects
-
-
-
-
