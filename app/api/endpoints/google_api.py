@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Union
 
 from aiogoogle import Aiogoogle
 from fastapi import APIRouter, Depends
@@ -17,7 +18,7 @@ router = APIRouter()
 
 @router.post(
     '/',
-    response_model=list[dict[str, str | datetime]],
+    response_model=list[dict[str, Union[str, datetime]]],
     dependencies=[Depends(current_superuser)]
 )
 async def get_report(
